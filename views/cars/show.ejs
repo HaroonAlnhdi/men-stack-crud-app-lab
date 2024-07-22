@@ -23,7 +23,7 @@
                 <p>This is not Electric!</p>
                 <% } %>
 
-
+                <div class="but">
                     <!-- new delete button -->
                     <form action="/cars/<%=cars._id%>?_method=DELETE" method="POST">
                         <button type="submit">Delete <%= cars.name %></button>
@@ -31,11 +31,17 @@
 
                     <!--  edit page link  -->
                     <a class="edit" href="/cars/<%= cars._id %>/edit">Edit <%= cars.name %></a>
-                    
+                    </div>
                     
 </body>
 
 <style>
+
+    .but{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    }
     body {
         font-family: Arial, sans-serif;
         background-color: #f4f4f4;
@@ -61,7 +67,7 @@
 
     button {
         padding: 10px 20px;
-        margin: 10px 0;
+        margin: 10px ;
         background-color: #dc3545;
         color: #fff;
         border: none;
