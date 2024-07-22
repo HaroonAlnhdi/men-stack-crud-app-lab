@@ -1,0 +1,89 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cars</title>
+  </head>
+  <body>
+
+    <%- include('../nav') %>
+
+    <h1>All Cars</h1>
+    <ul>
+        <% cars.forEach(car => { %>
+            <li>
+                <a href="/cars/<%= car._id %>">
+                    <li> <%= car.name %> <%= car.year %> </li>
+                    
+                </a>
+               
+            </li>
+           
+                
+                
+        
+        <% }); %>
+    </ul>
+  </body>
+  <style>
+    body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: #f4f4f4;
+    }
+
+    h1, p {
+        text-align: center;
+        margin: 20px 0;
+    }
+
+    ul {
+        list-style: none;
+        padding: 0;
+        margin: 20px auto;
+        max-width: 600px;
+    }
+
+    li {
+            background: #fff;
+            margin: 10px 0;
+            padding: 15px;
+            border-radius: 5px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        li a {
+            text-decoration: none;
+            color: #333;
+            display: block;
+        }
+
+        li a:hover {
+            background-color: #f0f0f0;
+        }
+
+    div{
+
+        display: flex;
+        padding: 0 25px;
+    }
+
+    .car-details {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .car-details li {
+            margin: 5px 0;
+        }
+
+        .car-details li:first-child {
+            font-weight: bold;
+            font-size: 1.2em;
+        }
+  </style>
+</html>

@@ -1,0 +1,66 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title><%= cars.name %></title> <!-- Dynamic title based on fruit name -->
+  </head>
+  <body>
+    <%- include('../nav') %>
+    <h1><%= cars.name %> <%= cars.model  %> <%= cars.year %></h1>
+  <!-- Conditional rendering based on fruit's readiness -->
+  <% if (cars.isElectric) { %>
+    <p>This is Electric!</p>
+  <% } else { %>
+    <p>This is  not Electric!</p>
+  <% } %>
+
+
+  <!-- new delete button -->
+   
+
+  </body>
+
+  <style>
+    body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 20px;
+
+    align-items: center;
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 2em;
+    color: #333;
+}
+
+p {
+    text-align: center;
+    font-size: 1.2em;
+    color: #666;
+    margin: 10px 0;
+}
+
+button {
+    padding: 10px 20px;
+    margin: 10px 0;
+    background-color: #dc3545;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #c82333;
+}
+
+
+  </style>
+</html>
