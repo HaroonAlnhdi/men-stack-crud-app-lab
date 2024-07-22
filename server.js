@@ -7,6 +7,9 @@ const express = require("express");
 const mongoose = require("mongoose");
 const car = require("./models/car")
 const carsCtrl = require("./controllers/cars")
+const methodOverride = require('method-override');
+const morgan = require("morgan"); 
+
 
 // APP
 const app = express();
@@ -37,6 +40,13 @@ app.get('/cars/:CarId', async (req, res) => {
     res.render("./cars/show.ejs", { cars: foundCar });
 });
 
+app.delete("/cars/:CarId", async (req, res) => {
+    await car.findByIdAndDelete(req.params.CarId);
+    res.redirect("/cars");
+  });
+
+app.get('/cars/:CarId/edit', carsCtrl.edit);
+app.put('/cars/:CarId', carsCtrl.update);
 
 
 

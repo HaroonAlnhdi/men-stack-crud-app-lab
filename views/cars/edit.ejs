@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= cars.name %> edit</title>
+</head>
+<body>
+    <h1>Edit <%= cars.name %></h1>
+
+    <!-- updated form -->
+
+<form action="/cars/<%=cars._id%>?_method=PUT" method="POST">
+
+    <div>
+        <label for="name">Name:</label>
+        <input type="text" name="name" value="<%= cars.name %>" />
+    </div>
+
+    <div>
+        <label for="year">year:</label>
+        <input type="text" name="year" value="<%= cars.year %>" />
+    </div>
+    <div>
+        <label for="model">model:</label>
+        <input type="text" name="model" value="<%= cars.model %>" />
+    </div>
+
+    <div>
+        <label for="isElectric">isElectric ?</label>
+        <input type="checkbox" name="isElectric" <% if (cars.isElectric) { %>checked<% } %> >
+    </div>
+
+    <button type="submit">Update car</button>
+</form>
+  
+</body>
+
+
+<style>
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 2em;
+    color: #333;
+}
+
+form {
+    background: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    max-width: 400px;
+    width: 100%;
+}
+
+div {
+    margin-bottom: 15px;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+input[type="text"],
+input[type="number"] {
+    width: calc(100% - 20px);
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+input[type="checkbox"] {
+    margin-left: 5px;
+}
+
+button {
+    padding: 10px 20px;
+    margin: 10px 0;
+    background-color: #28a745;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+    cursor: pointer;
+    display: block;
+    width: 100%;
+    text-align: center;
+}
+
+button:hover {
+    background-color: #218838;
+}
+
+
+</style>
+</html>
